@@ -1,0 +1,1 @@
+This might need some help to work in your scenario, but it has the config files necessary to deploy a django project to apache/mod_wsgi inside a virtualenv
