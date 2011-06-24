@@ -3,7 +3,7 @@ import sys
 import glob
 import re
 
-PROJ_ROOT = "!ENV_PROJ_ROOT!"
+PROJ_ROOT = "!ENV_PROJ_DIR!"
 INSTALL_ROOT = "!ENV_INSTALL_ROOT!"
 VENV_ROOT = "!ENV_VENV_ROOT!"
 

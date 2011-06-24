@@ -28,7 +28,7 @@ def launch_deployment(env):
     _pull_code(env)
     
     file_var_replacements = {
-        'ENV_PROJ_ROOT': env.project_root,
+        'ENV_PROJ_DIR': env.new_proj,
         'ENV_STATIC_DIR': env.static_root,
         'ENV_INSTALL_ROOT': env.code_src,
         'ENV_GIT_REPO': env.proj_name,
