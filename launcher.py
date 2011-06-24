@@ -9,6 +9,8 @@ SKELETON_DIR = os.path.join(CURRENT_DIR, 'skeleton')
 
 def launch_deployment(env):
     env.new_proj = os.path.join(env.project_root, env.install_name)
+    if os.path.exists(env.new_proj):
+        raise Exception("Something already exists in this location: %s" % env.new_proj)
     env.apache_dir = os.path.join(env.new_proj, 'apache')
     env.code_src = os.path.join(env.new_proj, env.proj_name)
     env.static_root = os.path.join(env.code_src, 'static')
@@ -39,6 +41,7 @@ def launch_deployment(env):
         'ENV_ERROR_LOG': env.error_log,
         'ENV_ACCESS_LOG': env.access_log,
         'ENV_APACHE_DIR': env.apache_dir,
+        'ENV_SERVER_USER': env.server_user,
         'ENV_PYTHON_VERSION': env.python_version,
     }
     
