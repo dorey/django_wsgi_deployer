@@ -39,6 +39,7 @@ def launch_deployment(env):
         'ENV_ERROR_LOG': env.error_log,
         'ENV_ACCESS_LOG': env.access_log,
         'ENV_APACHE_DIR': env.apache_dir,
+        'ENV_PYTHON_VERSION': env.python_version,
     }
     
     def copy_skeleton_to_path(src_dir, dest_dir, file_name, substitutions):

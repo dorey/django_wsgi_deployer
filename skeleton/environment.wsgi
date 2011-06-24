@@ -13,7 +13,7 @@ for pdir in glob.glob(os.path.join(VENV_ROOT, "src", "*")):
 
 sys.path.append(PROJ_ROOT)
 sys.path.append(INSTALL_ROOT)
-sys.path.append(os.path.join(VENV_ROOT, 'lib', 'python2.6', 'site-packages'))
+sys.path.append(os.path.join(VENV_ROOT, 'lib', '!ENV_PYTHON_VERSION!', 'site-packages'))
 
 os.environ['DJANGO_SETTINGS_MODULE'] = '!ENV_GIT_REPO!.settings'
 

@@ -10,6 +10,7 @@ def launch():
     env.install_name = "nmis_staging"
     env.proj_name = "nmis"
     env.git_repo = "git://github.com/mvpdev/nmis.git"
+    env.python_version = "python2.7"
     
     from launcher import launch_deployment
     launch_deployment(env)
