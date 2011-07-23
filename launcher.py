@@ -61,6 +61,5 @@ def launch_deployment(env):
     copy_skeleton_to_path(SKELETON_DIR, env.apache_dir, 'site.conf', file_var_replacements)
 
 def _pull_code(env):
-    local("cd %s && git clone %s" % (env.new_proj, env.git_repo))
-    local("ls %s" % env.new_proj)
+    local("cd %s && git clone %s -b %s" % (env.new_proj, env.git_repo, env.git_branch))
 

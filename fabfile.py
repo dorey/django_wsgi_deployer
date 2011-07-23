@@ -6,7 +6,7 @@ from launcher import launch_deployment
 
 def launch():
     #where your projects live:
-    env.project_root = "/path/to/projects"
+    env.project_root = "/home/wsgi/srv"
     
     #the URL for this project
     env.hostname = "www.example.com"
@@ -18,11 +18,13 @@ def launch():
     env.server_user = "wsgi"
     
     #the name of this project
-    env.install_name = "nmis_staging"
+    # everything will be installed in "/%{project_root}/${install_name}"
+    env.install_name = "xls2xform_dev"
     
     #the repository's name (e.g. xyz.git => xyz)
-    env.proj_name = "nmis"
-    env.git_repo = "git://github.com/mvpdev/nmis.git"
+    env.proj_name = "xls2xform"
+    env.git_repo = "git://github.com/mvpdev/xls2xform.git"
+    env.git_branch = "develop"
     
     #python version (used in the virtualenv)
     env.python_version = "python2.7"
