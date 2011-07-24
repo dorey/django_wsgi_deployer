@@ -1,0 +1,30 @@
+####################################
+# These configs allow this deployer to create a directory structure like this:
+# project_root **e.g. "/srv/wsgi"
+#             - project_name **e.g. "xls2xform_dev"
+#                           - %{project}   ** the project code
+#                           - project_env  ** a virtualenv for the python libraries
+#                           - apache       ** configurations for wsgi and apache
+#                           - logs         ** a place for apache logs
+#                           - backups      ** a place for backups
+
+#where your projects live:
+project_root: /path/to/projects
+
+#the URL for this project
+hostname: www.example.com
+#the admin email (used in the apache config file)
+admin_email: someone@example.com
+#the user that the server will run as (used in the apache config)
+server_user: wsgi
+# everything will be installed in "/%{project_root}/${install_name}"
+install_name: install_name
+
+#the repository's name (e.g. xyz.git => xyz)
+git:
+  name: xls2xform
+  repo: git://github.com/mvpdev/xls2xform.git
+  branch: develop
+
+#python version (to be used in the virtualenv)
+python_version: python2.7
