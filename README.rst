@@ -1,7 +1,5 @@
-A WSGI Deployment Script (using fabric)
-=======================================
-
-This code probably shouldn't depend on fabric, but right now it does.
+A WSGI Deployment Script
+========================
 
 You might find it useful for deploying multiple django wsgi projects that have their own 'virtualenv's.
 
@@ -15,7 +13,7 @@ This script will create a directory with the following files:
 * %(project): a 'git clone' of your project
 
 
-Edit the configurations in "fabfile.py" and run "fab launch".
+Edit the configurations in "configs.yaml" and run "python deployer.py". (note: deployer.py requires "pyyaml")
 
 After running, you will need to configure the database and create a symlink from the apache configurations to the "site.conf" file. For this, I'd recommend something like this:
 
