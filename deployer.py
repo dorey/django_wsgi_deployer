@@ -45,7 +45,7 @@ def run():
         'STATIC_DIR': "env.static_root",
         'INSTALL_ROOT': code_src,
         'GIT_REPO': configs['git']['name'],
-        'VROOT': virtualenv_path,
+        'VENV_ROOT': virtualenv_path,
         'SERVER_NAME': configs['hostname'],
         'ADMIN_EMAIL': configs['admin_email'],
         'WSGI_FILE': wsgi_file_path,
