@@ -8,8 +8,8 @@ INSTALL_ROOT = "!INSTALL_ROOT!"
 VENV_ROOT = "!VENV_ROOT!"
 
 for pdir in glob.glob(os.path.join(VENV_ROOT, "src", "*")):
-	if not re.search("\.txt$", pdir):
-		sys.path.append(pdir)
+    if not re.search("\.txt$", pdir):
+        sys.path.append(pdir)
 
 sys.path.append(PROJ_ROOT)
 sys.path.append(INSTALL_ROOT)
