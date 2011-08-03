@@ -42,7 +42,8 @@ def run():
 
     # a dict used to replace valuesin the skeleton files.
     file_var_replacements = {
-        'PROJ_DIR': configs['project_root'],
+        'PROJ_ROOT': configs['project_root'],
+        'PROJ_DIR': new_proj,
         'STATIC_DIR': static_dir,
         'INSTALL_ROOT': code_src,
         'GIT_REPO': configs['git']['name'],
