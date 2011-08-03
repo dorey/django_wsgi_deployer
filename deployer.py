@@ -59,13 +59,12 @@ def run():
     def copy_skeleton_to_path(src_dir, dest_dir, file_name, substitutions):
         src = os.path.join(src_dir, file_name)
         dest = os.path.join(dest_dir, file_name)
-        def substitute_text(key, val, text):
-            return re.sub("!%s!" % key, val, text)
+        def substitute(matchobj):
+            return substitutions[matchobj.group(1)]
         with open(dest, 'w') as f:
             skel = open(src, 'r')
             skel_txt = skel.read()
-            for key, val in substitutions.items():
-                skel_txt = substitute_text(key, val, skel_txt)
+            skel_txt = re.sub(r'!([^!]+)!', substitute, skel_txt)
             f.write(skel_txt)
             skel.close()
     copy_skeleton_to_path(SKELETON_DIR, apache_dir, 'environment.wsgi', file_var_replacements)
