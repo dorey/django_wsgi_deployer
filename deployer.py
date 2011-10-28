@@ -30,7 +30,7 @@ def run():
     wsgi_file_path = os.path.join(apache_dir, 'environment.wsgi')
     error_log = os.path.join(log_dir, 'error_log.log')
     access_log = os.path.join(log_dir, 'access_log.log')
-    
+    static_dir = os.path.join(new_proj, 'static')
     make_directory(new_proj)
     os.chdir(new_proj)
     call(["virtualenv", "--no-site-packages", "project_env"])
@@ -41,8 +41,9 @@ def run():
 
     # a dict used to replace valuesin the skeleton files.
     file_var_replacements = {
-        'PROJ_DIR': configs['project_root'],
-        'STATIC_DIR': "env.static_root",
+        'PROJ_ROOT': configs['project_root'],
+        'PROJ_DIR': new_proj,
+        'STATIC_DIR': static_dir,
         'INSTALL_ROOT': code_src,
         'GIT_REPO': configs['git']['name'],
         'VROOT': virtualenv_path,
