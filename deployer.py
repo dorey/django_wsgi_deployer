@@ -30,7 +30,7 @@ def run():
     wsgi_file_path = os.path.join(apache_dir, 'environment.wsgi')
     error_log = os.path.join(log_dir, 'error_log.log')
     access_log = os.path.join(log_dir, 'access_log.log')
-    static_dir = os.path.join(new_proj, git['name'], 'static')
+    static_dir = os.path.join(new_proj, configs['git']['name'], 'static')
     make_directory(new_proj)
     os.chdir(new_proj)
     call(["virtualenv", "--no-site-packages", "project_env"])
